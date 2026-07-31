@@ -5,23 +5,160 @@
 
 ---
 
-## Table of Contents
+### Table of Contents
 
-- [Q1. What is SQL and what is it used for?](#q1-what-is-sql-and-what-is-it-used-for)
-- [Q2. Describe the difference between SQL and NoSQL databases.](#q2-describe-the-difference-between-sql-and-nosql-databases)
-- [Q3. What are the different types of SQL commands?](#q3-what-are-the-different-types-of-sql-commands)
-- [Q4. Explain the purpose of the SELECT statement.](#q4-explain-the-purpose-of-the-select-statement)
-- [Q5. What is the difference between WHERE and HAVING clauses?](#q5-what-is-the-difference-between-where-and-having-clauses)
-- [Q6. Define what a JOIN is in SQL and list its types.](#q6-define-what-a-join-is-in-sql-and-list-its-types)
-- [Q7. What is a Primary Key?](#q7-what-is-a-primary-key)
-- [Q8. Explain Foreign Key.](#q8-explain-foreign-key)
-- [Q9. How can you prevent SQL Injection?](#q9-how-can-you-prevent-sql-injection)
-- [Q10. What is Normalization?](#q10-what-is-normalization)
-- [Q11. Explain Denormalization.](#q11-explain-denormalization)
-- [Q12. What are Indexes?](#q12-what-are-indexes)
+### SQL Basics
+
+- [Q1. What is SQL?](#q1-what-is-sql)
+- [Q2. What are the different types of SQL commands?](#q2-what-are-the-different-types-of-sql-commands)
+- [Q3. What is a Database?](#q3-what-is-a-database)
+- [Q4. What is a Table?](#q4-what-is-a-table)
+- [Q5. What is a Primary Key?](#q5-what-is-a-primary-key)
+- [Q6. What is a Foreign Key?](#q6-what-is-a-foreign-key)
+- [Q7. What is the difference between DELETE, TRUNCATE, and DROP?](#q7-what-is-the-difference-between-delete-truncate-and-drop)
+- [Q8. What is the WHERE clause?](#q8-what-is-the-where-clause)
+- [Q9. Explain DISTINCT.](#q9-explain-distinct)
+- [Q10. Explain HAVING Clause.](#q10-explain-having-clause)
+- [Q11. What is GROUP BY?](#q11-what-is-group-by)
+- [Q12. What are SQL Constraints?](#q12-what-are-sql-constraints)
 - [Q13. Explain GROUP BY.](#q13-explain-group-by)
 - [Q14. What is a Subquery?](#q14-what-is-a-subquery)
 - [Q15. Explain ORDER BY Clause.](#q15-explain-order-by-clause)
+- [Q16. What are Aggregate Functions in SQL?](#q16-what-are-aggregate-functions-in-sql)
+- [Q17. Explain the Differences Between INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL JOIN.](#q17-explain-the-differences-between-inner-join-left-join-right-join-and-full-join)
+- [Q18. How Do You Insert a New Row into a Database Table?](#q18-how-do-you-insert-a-new-row-into-a-database-table)
+- [Q19. Explain How to Update Records in a Database Table.](#q19-explain-how-to-update-records-in-a-database-table)
+- [Q20. What is a SQL View and What Are Its Advantages?](#q20-what-is-a-sql-view-and-what-are-its-advantages)
+
+---
+
+### SQL Data Types and Operators
+
+- [Q21. List the Different Data Types Available in SQL.](#q21-list-the-different-data-types-available-in-sql)
+- [Q22. What Are the Differences Between CHAR, VARCHAR, and TEXT Data Types?](#q22-what-are-the-differences-between-char-varchar-and-text-data-types)
+- [Q23. How Do You Use the BETWEEN Operator in SQL?](#q23-how-do-you-use-the-between-operator-in-sql)
+- [Q24. Describe the Use of the IN Operator.](#q24-describe-the-use-of-the-in-operator)
+- [Q25. Explain the Use of Wildcard Characters in SQL.](#q25-explain-the-use-of-wildcard-characters-in-sql)
+- [Q26. What Is the Purpose of the LIKE Operator?](#q26-what-is-the-purpose-of-the-like-operator)
+- [Q27. How Do You Handle NULL Values in SQL?](#q27-how-do-you-handle-null-values-in-sql)
+- [Q28. What Does the COALESCE Function Do?](#q28-what-does-the-coalesce-function-do)
+- [Q29. What Is the Difference Between UNION and UNION ALL?](#q29-what-is-the-difference-between-union-and-union-all)
+- [Q30. Describe the Use of Arithmetic Operators in SQL Queries.](#q30-describe-the-use-of-arithmetic-operators-in-sql-queries)
+- [Q31. Explain How to Use the CASE Statement in SQL.](#q31-explain-how-to-use-the-case-statement-in-sql)
+- [Q32. How Would You Perform a Self JOIN?](#q32-how-would-you-perform-a-self-join)
+- [Q33. What Is a CROSS JOIN and When Would You Use It?](#q33-what-is-a-cross-join-and-when-would-you-use-it)
+- [Q34. How to Implement Pagination in SQL Queries?](#q34-how-to-implement-pagination-in-sql-queries)
+- [Q35. Explain the Concept of Common Table Expressions (CTEs) and Recursive CTEs.](#q35-explain-the-concept-of-common-table-expressions-ctes-and-recursive-ctes)
+- [Q36. What Are Window Functions and How Are They Used?](#q36-what-are-window-functions-and-how-are-they-used)
+- [Q37. How Can You Concatenate Column Values in SQL?](#q37-how-can-you-concatenate-column-values-in-sql)
+- [Q38. What Is the PIVOT Operation and How Would You Apply It?](#q38-what-is-the-pivot-operation-and-how-would-you-apply-it)
+- [Q39. Explain the Process of Combining GROUP BY with ORDER BY.](#q39-explain-the-process-of-combining-group-by-with-order-by)
+- [Q40. How Would You Find Duplicate Records in a Table?](#q40-how-would-you-find-duplicate-records-in-a-table)
+
+---
+
+### SQL Database Concepts
+
+- [Q41. What Is the Entity-Relationship (ER) Model?](#q41-what-is-the-entity-relationship-er-model)
+- [Q42. Explain the Different Types of Database Schema.](#q42-explain-the-different-types-of-database-schema)
+- [Q43. What Are Stored Procedures and Their Benefits?](#q43-what-are-stored-procedures-and-their-benefits)
+- [Q44. What Is a Trigger in SQL and When Should It Be Used?](#q44-what-is-a-trigger-in-sql-and-when-should-it-be-used)
+- [Q45. Describe the ACID Properties.](#q45-describe-the-acid-properties)
+- [Q46. What Is Database Sharding?](#q46-what-is-database-sharding)
+- [Q47. How Do Database Indexes Work and What Types Are There?](#q47-how-do-database-indexes-work-and-what-types-are-there)
+- [Q48. Describe the Process of Data Warehousing.](#q48-describe-the-process-of-data-warehousing)
+- [Q49. Explain the Difference Between OLTP and OLAP Systems.](#q49-explain-the-difference-between-oltp-and-olap-systems)
+- [Q50. What Are Materialized Views and How Do They Differ from Standard Views?](#q50-what-are-materialized-views-and-how-do-they-differ-from-standard-views)
+
+---
+
+### SQL Performance Optimization
+
+- [Q51. How Do You Identify and Optimize Slow-Running Queries?](#q51-how-do-you-identify-and-optimize-slow-running-queries)
+- [Q52. What Is a Query Execution Plan?](#q52-what-is-a-query-execution-plan)
+- [Q53. Explain How to Use EXPLAIN or EXPLAIN ANALYZE.](#q53-explain-how-to-use-explain-or-explain-analyze)
+- [Q54. How Can Indexing Affect Performance?](#q54-how-can-indexing-affect-performance)
+- [Q55. How Do You Measure SQL Query Performance?](#q55-how-do-you-measure-sql-query-performance)
+- [Q56. How Would You Rewrite a Query to Improve Performance?](#q56-how-would-you-rewrite-a-query-to-improve-performance)
+- [Q57. What Are Partitioned Tables and How Do They Improve Performance?](#q57-what-are-partitioned-tables-and-how-do-they-improve-performance)
+- [Q58. How Do You Implement Database Encryption?](#q58-how-do-you-implement-database-encryption)
+- [Q59. What Are Roles in SQL?](#q59-what-are-roles-in-sql)
+- [Q60. Explain Row-Level Security.](#q60-explain-row-level-security)
+- [Q61. Describe User-Defined Functions (UDFs).](#q61-describe-user-defined-functions-udfs)
+
+---
+
+### SQL Functions and Transactions
+
+- [Q62. Describe Scalar-Valued and Table-Valued Functions.](#q62-describe-scalar-valued-and-table-valued-functions)
+- [Q63. How Would You Define a Stored Procedure with Input and Output Parameters?](#q63-how-would-you-define-a-stored-procedure-with-input-and-output-parameters)
+- [Q64. What Is the Difference Between a Function and a Stored Procedure?](#q64-what-is-the-difference-between-a-function-and-a-stored-procedure)
+- [Q65. How Do You Use CAST and CONVERT Functions?](#q65-how-do-you-use-cast-and-convert-functions)
+- [Q66. What Is a Database Transaction?](#q66-what-is-a-database-transaction)
+- [Q67. Explain Locking and Its Types.](#q67-explain-locking-and-its-types)
+- [Q68. What Are the Properties of Transactions?](#q68-what-are-the-properties-of-transactions)
+- [Q69. How Do You Manage Transaction Isolation Levels?](#q69-how-do-you-manage-transaction-isolation-levels)
+- [Q70. What Does COMMIT and ROLLBACK Mean?](#q70-what-does-commit-and-rollback-mean)
+
+---
+
+### SQL and Modern Architecture
+
+- [Q71. How Can SQL Be Integrated with Big Data Technologies?](#q71-how-can-sql-be-integrated-with-big-data-technologies)
+- [Q72. SQL with Cloud-Based Data Stores.](#q72-sql-with-cloud-based-data-stores)
+- [Q73. What Is a Data Lake?](#q73-what-is-a-data-lake)
+- [Q74. SQL and NoSQL Together in the Same Application.](#q74-sql-and-nosql-together-in-the-same-application)
+- [Q75. SQL in a Microservices Architecture.](#q75-sql-in-a-microservices-architecture)
+
+---
+
+### SQL Best Practices
+
+- [Q76. Common SQL Coding Practices.](#q76-common-sql-coding-practices)
+- [Q77. How to Ensure SQL Script Portability.](#q77-how-to-ensure-sql-script-portability)
+- [Q78. Version Control for SQL Scripts.](#q78-version-control-for-sql-scripts)
+- [Q79. Benefits of Stored Procedures over Embedded SQL.](#q79-benefits-of-stored-procedures-over-embedded-sql)
+- [Q80. How to Document SQL Code Effectively.](#q80-how-to-document-sql-code-effectively)
+
+---
+
+### SQL Interview Scenarios
+
+- [Q81. Find the Nth Highest Salary.](#q81-find-the-nth-highest-salary)
+- [Q82. Count Occurrences of a Value.](#q82-count-occurrences-of-a-value)
+- [Q83. Calculate Running Totals.](#q83-calculate-running-totals)
+- [Q84. Reverse a Column Without REVERSE().](#q84-reverse-a-column-without-reverse)
+- [Q85. Calendar Table and Its Uses.](#q85-calendar-table-and-its-uses)
+
+---
+
+### Data Manipulation and ETL
+
+- [Q86. What Is ETL?](#q86-what-is-etl)
+- [Q87. Import/Export Data Using SQL.](#q87-importexport-data-using-sql)
+- [Q88. Basic ETL Process in Data Warehousing.](#q88-basic-etl-process-in-data-warehousing)
+- [Q89. Cleanse and Format Data Using SQL.](#q89-cleanse-and-format-data-using-sql)
+- [Q90. Automating Data Import/Export.](#q90-automating-data-importexport)
+
+---
+
+### Domain-Specific SQL Scenarios
+
+- [Q91. Model a Many-to-Many Relationship.](#q91-model-a-many-to-many-relationship)
+- [Q92. Manage Hierarchical Data.](#q92-manage-hierarchical-data)
+- [Q93. SQL Queries for Reporting Applications.](#q93-sql-queries-for-reporting-applications)
+- [Q94. Handle Temporal Data and Time Zones.](#q94-handle-temporal-data-and-time-zones)
+- [Q95. SQL in Financial Applications.](#q95-sql-in-financial-applications)
+
+---
+
+### SQL Troubleshooting
+
+- [Q96. Troubleshoot a Failed SQL Query.](#q96-troubleshoot-a-failed-sql-query)
+- [Q97. Recover Data from a Corrupt Database.](#q97-recover-data-from-a-corrupt-database)
+- [Q98. Methods to Ensure Data Integrity.](#q98-methods-to-ensure-data-integrity)
+- [Q99. How Do You Resolve Deadlocks?](#q99-how-do-you-resolve-deadlocks)
+
 
 ---
 
