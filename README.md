@@ -172,13 +172,13 @@
 
 #### Core Components
 
-| Component | Description |
-|-----------|-------------|
-| **DDL (Data Definition Language)** | Defines database schema objects (e.g., `CREATE`, `ALTER`, `DROP`) |
-| **DML (Data Manipulation Language)** | Manages row-level data (e.g., `INSERT`, `UPDATE`, `DELETE`, `MERGE`) |
-| **DCL (Data Control Language)** | Manages authorization and security (e.g., `GRANT`, `REVOKE`) |
-| **TCL (Transaction Control Language)** | Controls transactions (e.g., `COMMIT`, `ROLLBACK`, `SAVEPOINT`) |
-| **DQL (Data Query Language)** | Retrieves data using `SELECT` statements |
+| Category | Full Form | Purpose | Common Commands |
+| :-------- | :-------- | :------ | :-------------- |
+| **DDL** | Data Definition Language | Defines and modifies database objects such as tables, views, indexes, and schemas. | `CREATE`, `ALTER`, `DROP`, `TRUNCATE`, `RENAME` |
+| **DML** | Data Manipulation Language | Inserts, updates, deletes, and merges data stored in tables. | `INSERT`, `UPDATE`, `DELETE`, `MERGE` |
+| **DQL** | Data Query Language | Retrieves data from one or more database tables. | `SELECT` |
+| **DCL** | Data Control Language | Controls user access and permissions within the database. | `GRANT`, `REVOKE` |
+| **TCL** | Transaction Control Language | Manages transactions to ensure data consistency and integrity. | `COMMIT`, `ROLLBACK`, `SAVEPOINT`, `SET TRANSACTION` |
 
 ---
 
