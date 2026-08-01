@@ -575,42 +575,191 @@ If you need **both SQL capabilities and horizontal scalability**, consider **Dis
 
 ### Q3. What are the different types of SQL commands?
 
-## DQL
+SQL commands are categorized into **five main types** based on their purpose.
 
-- SELECT
-- FROM
-- WHERE
-- GROUP BY
-- HAVING
-- JOIN
-- WITH
+| Type | Full Form | Purpose | Commands |
+|------|-----------|---------|----------|
+| **DDL** | Data Definition Language | Defines and modifies database objects | `CREATE`, `ALTER`, `DROP`, `TRUNCATE`, `RENAME` |
+| **DML** | Data Manipulation Language | Inserts, updates, and deletes data | `INSERT`, `UPDATE`, `DELETE`, `MERGE` |
+| **DQL** | Data Query Language | Retrieves data from the database | `SELECT` |
+| **DCL** | Data Control Language | Controls user permissions | `GRANT`, `REVOKE` |
+| **TCL** | Transaction Control Language | Manages transactions | `COMMIT`, `ROLLBACK`, `SAVEPOINT`, `SET TRANSACTION` |
 
-## DDL
+---
 
-- CREATE
-- ALTER
-- DROP
-- TRUNCATE
-- COMMENT
+#### 1. DDL (Data Definition Language)
 
-## DML
+DDL commands are used to **create, modify, and delete database objects** such as tables, views, indexes, and schemas.
 
-- INSERT
-- UPDATE
-- DELETE
-- MERGE
+**Common Commands**
 
-## TCL
+- `CREATE` – Creates a new database object.
+- `ALTER` – Modifies an existing database object.
+- `DROP` – Deletes a database object permanently.
+- `TRUNCATE` – Removes all rows from a table without deleting the table.
+- `RENAME` – Renames a database object.
 
-- COMMIT
-- ROLLBACK
-- SAVEPOINT
+**Example**
 
-## DCL
+```sql
+-- Create a table
+CREATE TABLE Employee (
+    id INT PRIMARY KEY,
+    name VARCHAR(100)
+);
 
-- GRANT
-- REVOKE
-- DENY
+-- Add a new column
+ALTER TABLE Employee
+ADD salary DECIMAL(10,2);
+
+-- Remove all records
+TRUNCATE TABLE Employee;
+
+-- Delete the table
+DROP TABLE Employee;
+```
+
+---
+
+#### 2. DML (Data Manipulation Language)
+
+DML commands are used to **insert, update, and delete data** stored in database tables.
+
+**Common Commands**
+
+- `INSERT` – Adds new records.
+- `UPDATE` – Modifies existing records.
+- `DELETE` – Removes records.
+- `MERGE` – Inserts, updates, or deletes based on matching conditions.
+
+**Example**
+
+```sql
+-- Insert a record
+INSERT INTO Employee(id, name, salary)
+VALUES (1, 'Anurag', 50000);
+
+-- Update a record
+UPDATE Employee
+SET salary = 60000
+WHERE id = 1;
+
+-- Delete a record
+DELETE FROM Employee
+WHERE id = 1;
+```
+
+---
+
+#### 3. DQL (Data Query Language)
+
+DQL commands are used to **retrieve data** from one or more tables.
+
+**Common Command**
+
+- `SELECT`
+
+**Example**
+
+```sql
+-- Retrieve all records
+SELECT * FROM Employee;
+
+-- Retrieve specific columns
+SELECT name, salary
+FROM Employee
+WHERE salary > 50000;
+```
+
+---
+
+#### 4. DCL (Data Control Language)
+
+DCL commands are used to **grant or revoke permissions** for database users.
+
+**Common Commands**
+
+- `GRANT`
+- `REVOKE`
+
+**Example**
+
+```sql
+-- Grant permission
+GRANT SELECT, INSERT
+ON Employee
+TO user1;
+
+-- Revoke permission
+REVOKE INSERT
+ON Employee
+FROM user1;
+```
+
+---
+
+#### 5. TCL (Transaction Control Language)
+
+TCL commands are used to **manage database transactions** and ensure data consistency.
+
+**Common Commands**
+
+- `COMMIT`
+- `ROLLBACK`
+- `SAVEPOINT`
+- `SET TRANSACTION`
+
+**Example**
+
+```sql
+BEGIN TRANSACTION;
+
+UPDATE Account
+SET balance = balance - 1000
+WHERE id = 1;
+
+UPDATE Account
+SET balance = balance + 1000
+WHERE id = 2;
+
+COMMIT;
+```
+
+**Rollback Example**
+
+```sql
+ROLLBACK;
+```
+
+**Savepoint Example**
+
+```sql
+SAVEPOINT sp1;
+
+UPDATE Employee
+SET salary = 70000
+WHERE id = 1;
+
+ROLLBACK TO sp1;
+```
+
+---
+
+#### 💡 Quick Revision
+
+| SQL Command Type | Purpose | Commands |
+|------------------|---------|----------|
+| **DDL** | Define database structure | `CREATE`, `ALTER`, `DROP`, `TRUNCATE`, `RENAME` |
+| **DML** | Manipulate data | `INSERT`, `UPDATE`, `DELETE`, `MERGE` |
+| **DQL** | Retrieve data | `SELECT` |
+| **DCL** | Manage permissions | `GRANT`, `REVOKE` |
+| **TCL** | Control transactions | `COMMIT`, `ROLLBACK`, `SAVEPOINT` |
+
+> **Interview Tip:** Remember the order **DDL → DML → DQL → DCL → TCL**. This covers creating the database, manipulating data, querying data, controlling access, and managing transactions.
+
+<p align="left">
+  <a href="#top">⬆️ Back to Top</a>
+</p>
 
 ---
 
